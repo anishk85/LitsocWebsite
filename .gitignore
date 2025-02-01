@@ -1,0 +1,12 @@
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore environment and build files
+.env
+.DS_Store
+dist/
+build/
+
+# Ignore log files
+npm-debug.log
+yarn-error.log
