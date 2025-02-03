@@ -8,6 +8,7 @@ import { EffectCoverflow, Pagination, Mousewheel } from 'swiper/modules';
 import { Route, Routes } from 'react-router-dom';
 import Home from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
+import Clubs from './pages/Clubs';
 // import './Sixth.css';
 
 const Sixth = () => {
@@ -33,6 +34,7 @@ const Sixth = () => {
             >
                 <SwiperSlide className="swiper-slide"><Home /></SwiperSlide>
                 <SwiperSlide className="swiper-slide"><AboutUs /></SwiperSlide>
+                <SwiperSlide className="swiper-slide"><Clubs /></SwiperSlide>
             </Swiper>
         </div>
     );
