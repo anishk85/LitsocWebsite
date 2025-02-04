@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -8,36 +8,42 @@ import { EffectCoverflow, Pagination, Mousewheel } from 'swiper/modules';
 import { Route, Routes } from 'react-router-dom';
 import Home from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
+import './App.css'; // Import the CSS file
 import Clubs from './pages/Clubs';
-// import './Sixth.css';
+
+const App = () => {
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            const maxScroll = document.querySelector(".track").offsetHeight - window.innerHeight;
+            const totalPages = document.querySelectorAll(".item").length;
+            const percentage = scrollPosition / maxScroll;
+            
+            document.querySelector(".frame").style.transform = `translateX(-${percentage * (totalPages - 1) * 100}vw)`;
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+    
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
 const Sixth = () => {
     return (
-        <div className="Sixth">
-            <Swiper
-                effect="coverflow"
-                grabCursor={true}
-                centeredSlides={true}
-                slidesPerView="auto"
-                coverflowEffect={{
-                    rotate: 0,
-                    stretch: 0,
-                    depth: 0,
-                    modifier: 1,
-                    slideShadows: true,
-                }}
-                pagination={{ clickable: true }}
-                mousewheel={true}
-                modules={[EffectCoverflow, Pagination, Mousewheel]}
-                className="coverflow-swiper"
-                speed={2000}
-            >
-                <SwiperSlide className="swiper-slide"><Home /></SwiperSlide>
-                <SwiperSlide className="swiper-slide"><AboutUs /></SwiperSlide>
-                <SwiperSlide className="swiper-slide"><Clubs /></SwiperSlide>
-            </Swiper>
+        <div className="App">
+            <div className="track">
+                <div className="camera">
+                    <div className="frame">
+                        <div className="item"><Home /></div>
+                        <div className="item"><AboutUs /></div>
+                        <div className="item"><Clubs /></div>
+                        <div className="item"><AboutUs /></div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
-};
+};}
 
-export default Sixth;
+export default App;

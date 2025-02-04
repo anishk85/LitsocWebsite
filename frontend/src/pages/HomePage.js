@@ -25,7 +25,8 @@ const HomePage = () => {
     console.log(data);
 
     return (
-        <div className='w-full min-h-screen bg-black text-white overflow-hidden'>
+        <div className='w-full min-h-screen bg-black text-white overflow-hidden rounded-r-[60px]'>
+            <Cursor/>
             <div className='h-full grid grid-cols-1 md:grid-cols-[1fr_400px]'>
                 {/* First Box */}
                 <div className="h-[300px] border-t-2 border-white self-end text-[80px] md:text-[133px] font-bricolage font-[500px] flex items-baseline flex-wrap px-4">

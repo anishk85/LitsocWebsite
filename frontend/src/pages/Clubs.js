@@ -1,24 +1,47 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import ClubsList from "../components/ClubsList";
 
 function Clubs() {
+  useEffect(() => {
+    const elements = document.querySelectorAll(".jjk");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          } else {
+            entry.target.classList.remove("visible"); // Removes class when out of view
+          }
+        });
+      },
+      { threshold: 0.6 } // Triggers when 40% of the element is visible
+    );
+
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el)); // Cleanup observer
+    };
+  }, []);
+
   return (
-    <>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500&family=Poppins:wght@500&display=swap"
-        rel="stylesheet"
-      />
-      <div className="flex overflow-hidden flex-col pr-6 pb-20 min-h-screen bg-black max-md:pr-5">
-      <div className="text-[160.093px] top-0 -mt-12 p-0 left-0 text-[#BFBBA9] font-bricolage font-[500px] ">
+    <div className="flex flex-col min-h-screen w-screen bg-black overflow-hidden m-0 p-0">
+      {/* Clubs Heading */}
+      <div className="text-[160px] text-[#BFBBA9] font-bricolage -mt-12 font-medium absolute m-0 p-0">
         Clubs
-        </div>
-        <div className="flex gap-5 max-md:flex-col">
+      </div>
+
+      {/* Clubs List Section */}
+      <div className="flex flex-col gap-1 mt-[200px] p-0">
+        <div className="jjk">
           <ClubsList />
         </div>
-        <div data-el="div-1" className="self-end w-full max-w-[1875px]" />
       </div>
-    </>
+    </div>
   );
 }
 
 export default Clubs;
+
+
