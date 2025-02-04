@@ -1,10 +1,4 @@
 import React, { useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/mousewheel';
-import { EffectCoverflow, Pagination, Mousewheel } from 'swiper/modules';
 import { Route, Routes } from 'react-router-dom';
 import Home from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
@@ -29,7 +23,6 @@ const App = () => {
         };
     }, []);
 
-const Sixth = () => {
     return (
         <div className="App">
             <div className="track">
@@ -38,12 +31,11 @@ const Sixth = () => {
                         <div className="item"><Home /></div>
                         <div className="item"><AboutUs /></div>
                         <div className="item"><Clubs /></div>
-                        <div className="item"><AboutUs /></div>
                     </div>
                 </div>
             </div>
         </div>
     );
-};}
+};
 
 export default App;
