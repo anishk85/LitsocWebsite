@@ -26,7 +26,7 @@ const HomePage = () => {
     console.log(data);
 
     return (
-        <div className='w-full min-h-screen bg-black text-white overflow-hidden'>
+        <div className='w-full min-h-screen bg-black text-white overflow-hidden rounded-r-[60px]'>
             <Cursor/>
             <div className='h-full grid grid-cols-1 md:grid-cols-[1fr_400px]'>
                 {/* First Box */}
