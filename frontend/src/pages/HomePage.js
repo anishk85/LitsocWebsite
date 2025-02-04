@@ -6,7 +6,6 @@ import Cursor from "../components/Cursor"
 
 const HomePage = () => {
     const [data, setData] = useState({ posts: [] });
-
     const getAllData = async () => {
         try {
             const result = await fetch(`${process.env.REACT_APP_BASE_URL}/getAllPosts`);

@@ -1,0 +1,27 @@
+
+/* Add this CSS for animation */
+@keyframes animat {
+    0% {
+      opacity: 0;
+      transform: translateY(-500px);
+    }
+    50% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-title {
+    animation: animateClubsTitle 2s ease-out;
+  }
+  
+.hh{
+  animation: animat linear;
+  animation-timeline: view();
+animation-range: entry 0 cover 100%;
+}
+  
