@@ -15,7 +15,7 @@ function Clubs() {
           }
         });
       },
-      { threshold: 0.6 } // Triggers when 40% of the element is visible
+      { threshold: 0.2 } // Triggers when 40% of the element is visible
     );
 
     elements.forEach((el) => observer.observe(el));
