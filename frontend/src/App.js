@@ -4,6 +4,7 @@ import Home from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
 import './App.css'; // Import the CSS file
 import Clubs from './pages/Clubs';
+import Cursor from './components/Cursor';
 
 const App = () => {
     useEffect(() => {
@@ -24,13 +25,13 @@ const App = () => {
 
     return (
         <div className="App">
+            <Cursor />
             <div className="track">
                 <div className="camera">
                     <div className="frame">
                     <div className="item"><Home /></div>
                         <div className="item"><AboutUs /></div>
                         <div className="item"><Clubs /></div>
-                        <div className="item"><AboutUs /></div>
                         </div>
                 </div>
             </div>

@@ -31,6 +31,7 @@ animation-range: entry 0 cover 100%;
 }
 
 .track {
+    background-color: transparent;
     height: 200vw; /* Adjust based on the number of items */
     position: relative;
 }
@@ -63,6 +64,13 @@ animation-range: entry 0 cover 100%;
     font-weight: bold;
     color: white;
     flex-shrink: 0; /* Prevents shrinking */
+}
+
+.item:nth-child(1){
+    background-color: #AD906C;
+}
+.item:nth-child(2){
+    background-color: #000000;
 }
 .jjk {
     transform: translateX(600px);
