@@ -31,7 +31,7 @@ animation-range: entry 0 cover 100%;
 }
 
 .track {
-    height: 200vw; /* Adjust based on the number of items */
+    height: 200vw; 
     position: relative;
 }
 
@@ -45,7 +45,7 @@ animation-range: entry 0 cover 100%;
 
 .frame {
     display: flex;
-    width: 300vw; /* Adjusted to ensure each section is 100vw */
+    width: 300vw; 
     height: 100vh;
     position: absolute;
     top: 0;
@@ -54,7 +54,7 @@ animation-range: entry 0 cover 100%;
 }
 
 .item {
-    width: 100vw; /* Ensuring each item has an equal width */
+    width: 100vw; 
     height: 100vh;
     display: flex;
     align-items: center;
@@ -62,7 +62,7 @@ animation-range: entry 0 cover 100%;
     font-size: 3rem;
     font-weight: bold;
     color: white;
-    flex-shrink: 0; /* Prevents shrinking */
+    flex-shrink: 0; 
 }
 .jjk {
     transform: translateX(600px);

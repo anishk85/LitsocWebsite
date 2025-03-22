@@ -4,6 +4,7 @@ import Home from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
 import './App.css'; // Import the CSS file
 import Clubs from './pages/Clubs';
+import Cursor from './components/Cursor';
 
 const App = () => {
     useEffect(() => {
@@ -26,6 +27,7 @@ const App = () => {
         <div className="App">
             <div className="track">
                 <div className="camera">
+                        <Cursor/>
                     <div className="frame">
                     <div className="item"><Home /></div>
                         <div className="item"><AboutUs /></div>
@@ -34,6 +36,7 @@ const App = () => {
                         </div>
                 </div>
             </div>
+
         </div>
     );
 };
